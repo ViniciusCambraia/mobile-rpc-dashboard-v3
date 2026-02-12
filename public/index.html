@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Discord Mobile RPC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <div class="glass-container">
+        <aside class="sidebar">
+            <div class="header">
+                <div class="glow-logo">🧬</div>
+                <h1>Mobile<span class="accent">RPC</span></h1>
+            </div>
+            <div class="user-card" id="userCard">
+                <div class="avatar-placeholder"></div>
+                <div class="user-meta">
+                    <p class="username" id="displayUsername">Not Connected</p>
+                    <p class="status" id="displayStatus">Offline</p>
+                </div>
+            </div>
+            <div class="console" id="console">
+                <div class="log system">Welcome, LO. Waiting for input...</div>
+            </div>
+        </aside>
+        <main class="editor">
+            <section class="config-section">
+                <h2>Configuration</h2>
+                <div class="form-grid">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Application ID</label>
+                            <input type="text" id="appId" placeholder="123456789012345678">
+                        </div>
+                        <div class="input-group">
+                            <label>Display Name</label>
+                            <input type="text" id="rpcName" placeholder="Playing Something">
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary" id="btnSave">Save Settings</button>
+                    <button class="btn btn-danger" id="btnStop">Stop Presence</button>
+                    <button class="btn btn-secondary" id="btnAuth">Change Token</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Secure Access</h2>
+            <input type="password" id="dashboardPassword" placeholder="••••••••">
+            <button class="btn btn-primary" id="btnDashboardLogin">Unlock Dashboard</button>
+        </div>
+    </div>
+</body>
+</html>
